@@ -15,24 +15,50 @@
 <body>
     <section class="tools">
 
-        <div class="options">
-            <select name="fontFamily" id="">
+        <form class="options" id="form" onchange="onFormChange()">
+            <select name="fontFamily" id="family">
                 <option value="sans">Sans Pro</option>
                 <option value="monospace">Monospace</option>
                 <option value="sans-serif">Sans Serif</option>
 
             </select>
             <input type="number" id="text-size" name="fontsize" min="8" max="24" placeholder="Font Size">
-            <span id="bold" class="icons"><i class="fa-solid fa-bold"></i></span>
-            <span id="italic" class="icons"><i class="fa-solid fa-italic"></i></span>
-            <span id="left-align" class="icons"><i class="fa-solid fa-align-left"></i></span>
-            <span id="center-align" class="icons"><i class="fa-solid fa-align-center"></i></span>
-            <span id="right-align" class="icons"><i class="fa-solid fa-align-right"></i></span>
-        
-        </div>
+            <div>
+                <input type="checkbox" id="bold" class="hide" name="bold">
+                <label for="bold" class="icons"><i class="fa-solid fa-bold"></i></label>
+            </div>
+            <div>
+                <input type="checkbox" id="italic" class="hide" name="italic">
+                <label for="italic" class="icons"><i class="fa-solid fa-italic"></i></label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="underline" class="hide" name="underline">
+                <label for="underline" class="icons"><i class="fa-solid fa-underline"></i></label>
+            </div>
+            <div>
+                <input type="radio" id="left-align" class="hide" name="alignment" value="left" checked>
+                <label for="left-align" class="icons"><i class="fa-solid fa-align-left"></i></label>
+                <input type="radio" id="center-align" class="hide" name="alignment" value="center" >
+                <label for="center-align" class="icons"><i class="fa-solid fa-align-center"></i></label>
+                <input type="radio" id="right-align"  class="hide" name="alignment" value="right" >
+                <label for="right-align" class="icons"><i class="fa-solid fa-align-right"></i></label>
+            </div>
+            
+            <div>
+                <input type="color" name="textColor" id="format-color" name="color" class="hide" value="#000">
+                <label for="format-color" class="icons"><i class="fa-solid fa-pencil"></i></label>
+            </div>
+            <div>
+                <input type="color" name="bgcolor" id="background-color" name="bgcolor" class="hide" value="#fff">
+                <label for="background-color" class="icons"><i class="fa-solid fa-fill-drip"></i></label>
+            </div>
+
+
+        </form>
         <div class="bottom-section">
-            <div id="active-cell">Null</div>
-            <input type="text" class="expression" placeholder="f (x)"/>
+            <div id="active-cell"></div>
+            <input oninput="onChangeFontSize()" type="text" class="expression" placeholder="f (x)" />
         </div>
     </section>
 
@@ -53,9 +79,9 @@
     </section>
     <script src="options.js"></script>
     <script src="script.js">
-        
+
     </script>
-  
+
 </body>
 
 </html>

@@ -27,3 +27,18 @@
     background-color: #ededed;
     padding: 10px;
 }
+
+.icons{
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px;
+}
+.icons:hover{
+    background-color: #ededed;
+}
+.hide{
+    display: none;
+}
+.hide:checked + label{
+    background-color: #ededed;
+}
