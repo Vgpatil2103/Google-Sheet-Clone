@@ -37,7 +37,8 @@
     background-color: #ededed;
 }
 .hide{
-    display: none;
+    width: 0;
+    height: 0;
 }
 .hide:checked + label{
     background-color: #ededed;
